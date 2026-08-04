@@ -1,12 +1,11 @@
-\documentclass[10pt, letterpaper]{article}
-% Packages:
+\documentclass[9.5pt, letterpaper]{article}
 \usepackage[
     ignoreheadfoot,
-    top=2cm,
-    bottom=2cm,
-    left=2cm,
-    right=2cm,
-    footskip=1.0cm
+    top=1.2cm,
+    bottom=1.2cm,
+    left=1.5cm,
+    right=1.5cm,
+    footskip=0.5cm
 ]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
@@ -18,7 +17,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\topskip}{0pt}
 \titleformat{\section}{\bfseries\large}{}{0pt}{}[\titlerule]
-\titlespacing{\section}{0pt}{0.3cm}{0.2cm}
+\titlespacing{\section}{0pt}{0.16cm}{0.12cm}
 \renewcommand\labelitemi{$\bullet$}
 \newenvironment{onecolentry}{
     \begin{adjustwidth}{0.2cm}{0.2cm}
@@ -26,11 +25,12 @@
     \end{adjustwidth}
 }
 \begin{document}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                           HEADER
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
-    {\bf\fontsize{24pt}{24pt}\selectfont Amrinder Singh} \\[0.3cm]
+    {\bf\fontsize{22pt}{22pt}\selectfont Amrinder Singh} \\[0.2cm]
     Houston, TX 77084 \quad | \quad
     \href{mailto:Amrinderbalharjob@gmail.com}{Amrinderbalharjob@gmail.com} \quad | \quad
     (832) 263-4489 \\[0.1cm]
@@ -44,45 +44,56 @@
 \section{Education}
 University of Houston, Houston, TX \\
 \textbf{Bachelor of Science, Computer Science} \hfill \textbf{Expected May 2026} \\
-\textbf{Relevant Coursework:} Data Structures \& Algorithms, Operating Systems, Database Systems, Software Engineering, Software Design, Computer Networking
+\textbf{Relevant Coursework:} Data Structures \& Algorithms, OS, Databases, Software Engineering, Computer Networking, GPU Programming (CUDA), Artificial Intelligence
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                           EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experience}
+\textbf{Software Developer}, Geometris (IoT Telematics) $\cdot$ Houston, TX \hfill \textbf{May 2026 -- Present}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0.05cm, topsep=0.05cm, parsep=0pt]
+    \item Built and shipped a full-stack production management system (React, Node.js/Express, MySQL) used daily on the factory floor to track IoT device orders from sales order through prep, build, pack, and shipment
+    \item Engineered a read-only Zoho Inventory sync with OAuth 2.0, change detection, and insert-only imports --- cut API usage $\sim$98\% (74 $\rightarrow$ 1 call/hour) while keeping 100+ open orders continuously up to date
+    \item Designed QR-code mobile packing workflow, live SIM inventory tracking, and weekend-aware scheduling engine; also delivered an employee time-clock app and Zoho CRM quotation automation tools
+\end{itemize}
+\vspace{0.05cm}
+\textbf{Undergraduate Student Researcher}, University of Houston $\cdot$ Full-time \hfill \textbf{Jan 2026 -- Present}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0.05cm, topsep=0.05cm, parsep=0pt]
+    \item Researching improvements to offline search using embeddings and RAG pipelines as part of the IIAB project
+    \item Evaluating system performance on low-end, low-cost Android devices and Raspberry Pi hardware
+    \item Developed FastAPI backend with multi-ZIM Kiwix search, FAISS semantic reranking (99\% similarity), and SQLite caching --- reducing query time from 6s to 0.10s (98\% faster)
+\end{itemize}
+\vspace{0.05cm}
+\textbf{Software Engineer}, Stealth $\cdot$ Internship \hfill \textbf{Jan 2026 -- Present}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0.05cm, topsep=0.05cm, parsep=0pt]
+    \item Engineered AR collaboration features for Meta Quest 3, enabling real-time multi-user interaction
+    \item Architected Unity WebRTC pipeline with Azure Web PubSub signaling for low-latency real-time communication
+    \item Built PassthroughCameraAccess-based AR pipeline with Unity and AR Foundation for plane detection and 3D annotation anchoring
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                           PROJECTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Project Experience}
-\textbf{SiriMind iOS App}, Independent Project \hfill May 2024 -- August 2024 
-\begin{itemize}[leftmargin=0.5cm, itemsep=0.1cm]
-    \item Developed voice-enabled iOS application integrating OpenAI GPT API for intelligent conversational interface
-    \item Implemented Firebase authentication system supporting 100+ test users with secure data management
-    \item Designed responsive UI using UIKit with speech-to-text and text-to-speech functionality
+\textbf{IIAB Offline Search Engine}, Open-Source Contributor $\cdot$ IIAB Team \hfill \textbf{January 2026 -- Present}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0.05cm, topsep=0.05cm, parsep=0pt]
+    \item Contributed offline AI search layer to IIAB project, enabling semantic search over 6 ZIM libraries (Wikipedia, DevDocs) on a Raspberry Pi 5 WiFi hotspot serving 20+ concurrent users
+    \item Reduced average query latency by 60\% via parallel multi-ZIM scraping (ThreadPoolExecutor) and non-blocking SQLite caching with 7-day TTL, achieving $\sim$95\% cache hit rate on repeat queries
+    \item Integrated FAISS semantic reranking (snowflake-arctic-embed) and qwen2.5:0.5b streaming answer box, improving result relevance over keyword-only search
 \end{itemize}
-
-\textbf{SpringAI Web Tour Builder}, Independent Project \hfill January 2024 -- May 2024 
-\begin{itemize}[leftmargin=0.5cm, itemsep=0.1cm]
+\vspace{0.05cm}
+\textbf{Local Hosted LLM \& RAG on Raspberry Pi} \hfill \textbf{Aug 2025 -- Dec 2025}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0.05cm, topsep=0.05cm, parsep=0pt]
+    \item Deployed self-hosted AI dashboard on dual Raspberry Pi 4 edge cluster (4 GB + 1 GB) running Ollama LLM inference and Qdrant vector DB, achieving sub-3s response times on sub-2B parameter models
+    \item Built Web-RAG pipeline (SerpAPI + Cheerio + nomic-embed-text + Qdrant) with SSE streaming, reducing hallucinations and providing up-to-date answers with cited sources unavailable to the base model
+    \item Implemented PDF semantic Q\&A (chunk $\rightarrow$ embed $\rightarrow$ top-K retrieval $\rightarrow$ LLM) and WebSocket hardware telemetry dashboard; exposed securely via Cloudflare Tunnel to a GitHub Pages frontend
+\end{itemize}
+\vspace{0.05cm}
+\textbf{SpringAI Web Tour Builder}  \hfill \textbf{January 2023 -- May 2023}
+\begin{itemize}[leftmargin=0.5cm, itemsep=0.05cm, topsep=0.05cm, parsep=0pt]
     \item Built full-stack web platform auto-generating interactive onboarding tours using Anthropic Claude API
     \item Integrated Microsoft OAuth authentication and managed deployment for 50+ demonstration projects
     \item Created dynamic tour generation system with customizable templates and user analytics dashboard
-\end{itemize}
-
-\textbf{User Management System}, Software Engineering Course \hfill August 2023 -- December 2023 
-\begin{itemize}[leftmargin=0.5cm, itemsep=0.1cm]
-    \item Collaborated with 4-member team to develop enterprise-level user management system with role-based access
-    \item Designed and implemented RESTful API endpoints (POST, PUT, DELETE) with secure authentication
-    \item Built responsive dashboards for Superusers, Managers, and Users with real-time data synchronization
-\end{itemize}
-
-\textbf{Task Manager iOS App}, Mobile Application Development Course \hfill August 2024 -- December 2024 
-\begin{itemize}[leftmargin=0.5cm, itemsep=0.1cm]
-    \item Developed native iOS task management application with Core Data persistence and clean architecture
-    \item Optimized data retrieval operations achieving 20\% performance improvement in loading times
-    \item Implemented CRUD operations with local notifications and data export functionality
-\end{itemize}
-
-\textbf{Weather Forecast App}, Independent Project \hfill January 2024 -- May 2024 
-\begin{itemize}[leftmargin=0.5cm, itemsep=0.1cm]
-    \item Built iOS weather application consuming real-time weather API with location-based services
-    \item Integrated MapKit for GPS functionality achieving 95\% uptime with accurate location tracking
-    \item Designed intuitive interface with weather visualizations and 7-day forecast capabilities
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,31 +101,12 @@ University of Houston, Houston, TX \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Technical Skills}
 \begin{onecolentry}
-\textbf{Programming Languages:} Swift, Java, JavaScript, Python, C++ \\
-\textbf{Mobile Development:} iOS (UIKit, SwiftUI, Core Data, ARKit), Android \\
-\textbf{Web Technologies:} React, Node.js, Express.js, HTML5, CSS3, Bootstrap, EJS \\
-\textbf{Databases \& Cloud:} PostgreSQL, MongoDB, Firebase, Microsoft Azure \\
-\textbf{Tools \& APIs:} Git/GitHub, Docker, REST APIs, OAuth 2.0, OpenAI GPT API, Anthropic Claude API
+\textbf{Programming Languages:} Swift, Java, JavaScript, Python, C++, CUDA \\
+\textbf{Mobile / XR Development:} iOS (UIKit, SwiftUI, ARKit), Unity (AR Foundation, Meta XR SDK), Meta Quest 3 \\
+\textbf{Web Technologies:} React, Node.js, Express.js, FastAPI, HTML5, CSS3, Django Bootstrap \\
+\textbf{AI / ML:} Ollama, FAISS, Qdrant, ChromaDB, RAG pipelines, WebRTC, embeddings (nomic, snowflake-arctic) \\
+\textbf{Databases \& Cloud:} PostgreSQL, MySQL/MariaDB, MongoDB, Firebase, SQLite, Azure (Web PubSub) \\
+\textbf{Tools \& APIs:} Git/GitHub, Docker, REST APIs, OAuth 2.0, Zoho API, OpenAI API, Claude API, Cloudflare Tunnel
 \end{onecolentry}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                           EXPERIENCE (if any)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Uncomment and fill this section if you have relevant work experience
-% \section{Experience}
-% \textbf{Software Development Intern} | \textit{Company Name} \hfill \textbf{Month Year -- Month Year} \\
-% \begin{itemize}[leftmargin=0.5cm, itemsep=0.1cm]
-%     \item Bullet point describing your responsibilities and achievements
-% \end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                           ADDITIONAL
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Additional Information}
-\textbf{Certifications:} \\
-\quad • The Complete Full-Stack Web Development Bootcamp (Dr. Angela Yu) - 100\% Complete \\
-\quad • iOS \& Swift - The Complete iOS App Development Bootcamp (Dr. Angela Yu) - 100\% Complete \\
-\quad • Tensorflow 2: Deep Learning \& Artificial Intelligence (Lazy Programmer Inc.) - 99\% Complete \\
-\textbf{Languages:} English (Native), Punjabi (Native), Hindi (Conversational)
 
 \end{document}
